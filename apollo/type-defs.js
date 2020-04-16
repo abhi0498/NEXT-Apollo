@@ -2,12 +2,11 @@ import gql from 'graphql-tag'
 
 export const typeDefs = gql`
   type User {
-    id: ID!
-    email: String!
+    username: String!
   }
 
   input SignUpInput {
-    email: String!
+    username: String!
     password: String!
   }
 
@@ -25,7 +24,7 @@ export const typeDefs = gql`
   }
 
   type Query {
-    user(id: ID!): User!
+    user(username: String!): User!
     users: [User]!
     viewer: User
   }
